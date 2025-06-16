@@ -54,16 +54,16 @@ function resetGame() {
 function draw() {
   background(255);
 
-  if (round >= 1) {
+  if (round >= 3) {
     print(failcount);
-    if (failcount == 1){ 
-      window.location.href='';
+    if (failcount == 3){ 
+      window.location.href='https://helena212121.github.io/Scam_4/';
       print('go!');
      // failcount++;
     }
     fill(0);
     textSize(24);
-    text("Wynik: " + score + " / 9", width / 2, 40);
+    text("Wynik: " + score + " / 3", width / 2, 40);
     textSize(24);
     fill('#DA1E1E');
     text("Coś poszło nie tak.", width / 2, 80);
@@ -93,7 +93,7 @@ function draw() {
     }
     clicked = false;
     round++;
-    if (round < 9) {
+    if (round < 3) {
       pickNewColor();
       timer = 180;
     }
@@ -116,7 +116,7 @@ function mousePressed() {
     }
     return;
   }
-  if (round >= 9 || clicked) return;
+  if (round >= 3 || clicked) return;
 
   for (let c of circles) {
     let d = dist(mouseX, mouseY, c.x, c.y);
@@ -142,6 +142,10 @@ function pickNewColor() {
     textColor = random(colors);
   }
 }
+
+
+
+
 
 
 
